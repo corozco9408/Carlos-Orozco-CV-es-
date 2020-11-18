@@ -1,8 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CV template
-% Originally created by Adrien Friggeri
-% Improved by Carmine Benedetto
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesClass{cv-class}[2012/04/30 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
@@ -12,7 +7,6 @@
 }
 \ProcessOptions\relax
 \LoadClass{article}
-
 
 %%%%%%%%%%
 % Colors %
@@ -52,21 +46,8 @@
 % Fonts %
 %%%%%%%%%
 
-% \RequirePackage[quiet]{fontspec}
-% \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
-% 
-% \newfontfamily\bodyfont[]{Helvetica Neue}
-% \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-% \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
-% 
-% \defaultfontfeatures{Mapping=tex-text}
-% \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
-% 
-% \setmathfont{XITS Math}
-
-%%% modified by Karol Kozioł for ShareLaTex use
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+\RequirePackage[math-style=TeX]{unicode-math}
 
 \newfontfamily\bodyfont
 [BoldFont=texgyreheros-bold.otf,
@@ -74,8 +55,6 @@ ItalicFont=texgyreheros-italic.otf,
 BoldItalicFont=texgyreheros-bolditalic.otf]
 {texgyreheros-regular.otf}
 \newfontfamily\thinfont[]{Lato-Light.ttf}
-% or for thiner version
-%\newfontfamily\thinfont[]{Lato-Hairline.ttf}
 \newfontfamily\headingfont[]{texgyreheros-bold.otf}
 
 \defaultfontfeatures{Mapping=tex-text}
@@ -315,10 +294,6 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 
 \DeclareNameFormat{author}{%
   \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
 }
 
 \newcommand{\printbibsection}[2]{
@@ -328,12 +303,10 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   \end{refsection}
 }
 
-\DeclareSortingScheme{chronological}{
+\DeclareSortingTemplate{chronological}{
   \sort[direction=descending]{\field{year}}
   \sort[direction=descending]{\field{month}}
 }
-
-
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
